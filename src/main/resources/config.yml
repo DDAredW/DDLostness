@@ -1,0 +1,31 @@
+messages:
+  no_permission: "&cУ вас нет прав на использование этой команды!"
+  invalid_amount: "&cНеверное количество!"
+  player_not_found: "&cИгрок не найден!"
+  usage: "&cИспользование: /dlos <игрок> <количество>"
+  given_item: "&aВы выдали &e{amount} &aпредметов игроку &e{target}"
+  block_place_denied: "Вы не можете установить этот предмет!"
+
+item:
+  name: "&eСлабительное"
+  lore:
+    - "&7Правый клик чтобы использовать"
+    - "&7Накладывает эффекты на ближайших игроков"
+
+effects:
+  sound:
+    type: ENTITY_ENDERMAN_TELEPORT
+    volume: 1.0
+    pitch: 1.0
+  duration: 30
+  radius: 5
+  potion_effects:
+    blindness:
+      type: BLINDNESS
+      level: 1
+    slowness:
+      type: SLOW
+      level: 2
+    weakness:
+      type: WEAKNESS
+      level: 2
