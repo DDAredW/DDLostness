@@ -1,0 +1,9 @@
+name: DDLostness
+version: '1.1'
+main: lunadev.ddlostness.DDLostness
+api-version: '1.16'
+commands:
+  dlos:
+    description: "Выдать слабительное игроку"
+    usage: "/dlos <ник> <количество>"
+    permission: ddlostness.give
