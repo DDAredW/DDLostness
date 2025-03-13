@@ -23,17 +23,16 @@ public class ItemUseListener implements Listener {
         if (item != null && item.getType() == Material.IRON_BARS) {
             Player player = event.getPlayer();
 
-            // Звуковой эффект из конфига
+            // Когда я начинал это писать, только Бог и я понимали, что я делаю. 
+            // Сейчас остался только Бог
             String soundEffect = plugin.getConfig().getString("effects.sound.type");
             float volume = (float) plugin.getConfig().getDouble("effects.sound.volume");
             float pitch = (float) plugin.getConfig().getDouble("effects.sound.pitch");
             player.getWorld().playSound(player.getLocation(), Sound.valueOf(soundEffect), volume, pitch);
 
-            // Параметры эффектов из конфига
             int duration = plugin.getConfig().getInt("effects.duration") * 20; // конвертируем в тики
             int radius = plugin.getConfig().getInt("effects.radius");
 
-            // Применяем эффекты
             for (String effectName : plugin.getConfig().getConfigurationSection("effects.potion_effects").getKeys(false)) {
                 PotionEffectType type = PotionEffectType.getByName(
                         plugin.getConfig().getString("effects.potion_effects." + effectName + ".type"));
@@ -47,7 +46,6 @@ public class ItemUseListener implements Listener {
                 }
             }
 
-            // Уменьшаем количество предметов
             item.setAmount(item.getAmount() - 1);
         }
     }
